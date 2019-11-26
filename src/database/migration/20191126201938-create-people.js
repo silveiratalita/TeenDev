@@ -43,6 +43,7 @@ module.exports = {
       document_identifier: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       created_at: {
         type: Sequelize.DATE,

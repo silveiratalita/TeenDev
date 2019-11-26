@@ -7,14 +7,14 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       school_id: {
         type: Sequelize.INTEGER,
         references: { model: 'people', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-        allowNull: false
+        allowNull: false,
       },
       note: {
         type: Sequelize.STRING,
@@ -22,23 +22,23 @@ module.exports = {
       },
       journey_id: {
         type: Sequelize.INTEGER,
-        references: { model: 'journey', key: 'id' },
+        references: { model: 'journeys', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-        allowNull: false
+        allowNull: false,
       },
       created_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updated_at: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
-    })
+        type: Sequelize.DATE,
+      },
+    });
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('journeys_students')
-  }
-}
+    return queryInterface.dropTable('journeys_students');
+  },
+};
