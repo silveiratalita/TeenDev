@@ -1,2 +1,2 @@
-# teendev
+# TeenDev
 Rocketseat experience hackaton project.
