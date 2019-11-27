@@ -6,7 +6,7 @@
   "author": "Time 165 Josimar,Luciana, Talita e João",
   "license": "MIT",
   "dependencies": {
-    "date-fns": "^2.8.1",
+    "dayjs": "^1.8.17",
     "express": "^4.17.1",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",

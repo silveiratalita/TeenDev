@@ -1,4 +1,4 @@
-import {DataTypes, Model } from 'sequelize';
+import {DataTypes, Model, Sequelize } from 'sequelize';
 
 class Journey extends Model {
 
@@ -12,8 +12,10 @@ class Journey extends Model {
           primaryKey: true,
           unique: true,
         },
-        start_date: DataTypes.DATE,
-        end_date: DataTypes.DATE,
+        startDate: DataTypes.DATE,
+        endData: DataTypes.DATE,
+        companyId: Sequelize.INTEGER,
+        schoolId: Sequelize.INTEGER,
       },
       {
         sequelize,
@@ -21,9 +23,15 @@ class Journey extends Model {
     );
 
     Journey.associate = models => {
-      Journey.belongsTo(models.Person, { as: 'school', foreignKey: 'school_id' });
-      Journey.belongsTo(models.Person, { as: 'company', foreignKey: 'company_id' })};
-
+      Journey.belongsTo(models.Person, {
+        as: 'schoolId',
+        foreignKey: 'id',
+      });
+      Journey.belongsTo(models.Person, {
+        as: 'companyId',
+        foreignKey: 'id',
+      });
+    };
   }
 }
 

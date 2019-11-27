@@ -1,6 +1,4 @@
 import Person from '../models/Person';
-
-
 import * as yup from 'yup';
 
 class PersonController {
