@@ -5,7 +5,6 @@ class PersonController {
   async store(req, res) {
     const yup = require('yup');
 
-
     const schema = yup.object().shape({
       name: yup.string().required(),
       type: yup.string().required(),
@@ -32,6 +31,28 @@ class PersonController {
       }
       const newPerson = await new Person(req.body).save();
       return res.send(newPerson);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  async getPerson(req, res) {
+    const { id } = req.params;
+
+    try {
+      if (id) {
+        const studentfound = await Person.findOne({ where: { id } });
+        if (studentfound) {
+          return res.send(studentfound);
+        }
+        return res.json({ error: 'Student not found' });
+      }
+
+      const allStudants = await Person.findAll({ where: { type: 'Aluno' } });
+
+      if (allStudants) {
+        return res.send(allStudants);
+      }
+      return res.json({ error: 'No student registred' });
     } catch (err) {
       console.error(err);
     }

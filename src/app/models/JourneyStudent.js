@@ -1,4 +1,4 @@
-import {DataTypes, Model } from 'sequelize';
+import {DataTypes, Model, Sequelize } from 'sequelize';
 
 class Person extends Model {
 
@@ -12,6 +12,9 @@ class Person extends Model {
           unique: true,
         },
         note: DataTypes.STRING,
+        schoolId: Sequelize.INTEGER,
+        journeyId: Sequelize.INTEGER,
+
       },
       {
         sequelize,

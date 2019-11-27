@@ -6,5 +6,6 @@ const routes = new Router();
 
 routes.post("/people", PersonController.store);
 routes.post("/journey", JourneyController.store);
+routes.get("/people", PersonController.getPerson);
 
 export default routes;
