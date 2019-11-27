@@ -17,6 +17,7 @@ class Person extends Model {
         adress: Sequelize.STRING,
         city: Sequelize.STRING,
         state: Sequelize.STRING,
+        password_hash: Sequelize.STRING,
 
       },
       {
